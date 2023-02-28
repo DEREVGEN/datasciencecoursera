@@ -1,0 +1,74 @@
+---
+title: "My first R MarkDown File"
+author: "YDG"
+date: "2023-02-26"
+output:
+  html_document:
+    df_print: paged
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+-- endash
+
+> Linux
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/800px-Tux.svg.png)
+
+```{r echo=FALSE}
+print("so.. big...")
+
+```
+
+-   TodoList
+    -   coding spring project
+    -   data base
+    -   learn skill to data science
+    -   coding test
+
+**this code from markdown-cheatsheet**
+
+------------------------------------------------------------------------
+
+check this ...
+
+[cheatsheet link](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+Choose a time series:
+
+```{r echo = FALSE}
+selectInput("data", "",
+c("co2", "lh"))
+```
+
+See a plot:
+
+```{r echo = FALSE}
+renderPlot({
+d <- get(input$data)
+plot(d)
+})
+```
+
+------------------------------------------------------------------------
+
+#### iris table
+
+```{r echo=FALSE}
+print(head(iris))
+```
